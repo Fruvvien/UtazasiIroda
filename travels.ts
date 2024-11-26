@@ -91,6 +91,7 @@ export class Travels {
       throw new Error("Invalid ID!");
     }
     const newData: UtazasiIroda = {
+      ...this.#travels[idx],
       ...data,
       id,
     };

@@ -3,31 +3,31 @@ import { UtazasiIrodaService } from './utazasi-iroda.service';
 import { CreateUtazasiIrodaDto } from './dto/create-utazasi-iroda.dto';
 import { UpdateUtazasiIrodaDto } from './dto/update-utazasi-iroda.dto';
 
-@Controller('utazasi-iroda')
+@Controller()
 export class UtazasiIrodaController {
   constructor(private readonly utazasiIrodaService: UtazasiIrodaService) {}
 
-  @Post('post')
+  @Post('travels')
   create(@Body() createUtazasiIrodaDto: CreateUtazasiIrodaDto) {
     return this.utazasiIrodaService.create(createUtazasiIrodaDto);
   }
 
-  @Get('get')
+  @Get('travels')
   findAll() {
     return this.utazasiIrodaService.findAll();
   }
 
-  @Get('getById/:id')
+  @Get('travels/:id')
   findOne(@Param('id') id: string) {
     return this.utazasiIrodaService.findOne(+id);
   }
 
-  @Patch('patch/:id')
+  @Patch('travels/:id')
   update(@Param('id') id: string, @Body() updateUtazasiIrodaDto: UpdateUtazasiIrodaDto) {
     return this.utazasiIrodaService.update(+id, updateUtazasiIrodaDto);
   }
 
-  @Delete('delete/:id')
+  @Delete('travels/:id')
   remove(@Param('id') id: string) {
     return this.utazasiIrodaService.remove(+id);
   }
